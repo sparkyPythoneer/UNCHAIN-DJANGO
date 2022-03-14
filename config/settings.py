@@ -28,7 +28,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='herokuapp.com', cast=Csv())
 INSTALLED_APPS = [
     # Local
     'db.apps.DbConfig',
-    'users.apps.UsersConfig',
+    'accounts.apps.AccountsConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,5 +128,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = "db.User"
 
 django_heroku.settings(locals())
